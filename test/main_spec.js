@@ -30,6 +30,34 @@ describe('predicateFrom', function () {
     expect(predicateFrom(false)(false)).to.be.true;
     expect(predicateFrom(false)(true)).to.be.false;
   });
+  it("should convert a regular expression to a predicate", () => {
+    let digits = /[0-9]+/
+    let onlyDigits = /^[0-9]+$/
+    expect(predicateFrom(digits)).to.be.a.function;
+    expect(predicateFrom(digits)('0')).to.be.true;
+    expect(predicateFrom(digits)('01232')).to.be.true;
+    expect(predicateFrom(digits)('aa 01232 bb')).to.be.true;
+    expect(predicateFrom(digits)('abcd')).to.be.false;
+
+    expect(predicateFrom(onlyDigits)('01232')).to.be.true;
+    expect(predicateFrom(onlyDigits)('a 01232')).to.be.false;
+    expect(predicateFrom(onlyDigits)('01232 b')).to.be.false;
+  });
+  it("should return a range predicate from a pair of numbers", () => {
+    expect(predicateFrom(0,10)(0)).to.be.true;
+    expect(predicateFrom(0,10)(5)).to.be.true;
+    expect(predicateFrom(0,10)(9)).to.be.true;
+    expect(predicateFrom(0,10)(-1)).to.be.false;
+    expect(predicateFrom(0,10)(10)).to.be.false;
+  });
+  it("should return a range predicate from a pair of strings", () => {
+    expect(predicateFrom('E','H')('E')).to.be.true;
+    expect(predicateFrom('E','H')('Echo')).to.be.true;
+    expect(predicateFrom('E','H')('Foxtrot')).to.be.true;
+    expect(predicateFrom('E','H')('Golf')).to.be.true;
+    expect(predicateFrom('E','H')('Hotel')).to.be.false;
+    expect(predicateFrom('E','H')('Alpha')).to.be.false;
+  });
   it("should convert an array of primitive values to a or predicate", () => {
     expect(predicateFrom([])('a')).to.be.true;
     expect(predicateFrom(['a'])('a')).to.be.true;
