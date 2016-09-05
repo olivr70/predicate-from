@@ -1,2 +1,3 @@
 lib/*_spec.js
 node_modules
+.history
