@@ -9,7 +9,7 @@ Arrow functions in ES6 provide an efficient syntax for expressing complex predic
 but may not be very redable for complex conditions.
 
 As it is very common to filter collections of objects, predicateFrom provides a very
-easy and expression way to express conditions for objects
+easy and expressive way to express conditions for objects
 
 ## Getting started
 
@@ -112,3 +112,26 @@ pf( { job:['carpenter','plumber], address:inParisUSA})(john) // true
 // all Smith in Texas
 pf( {name: x => x.startsWith('Smith'), address:{state:'US-TX'}})
 ``` 
+
+## Using
+
+It is a very small module (2,3 Kb of source), authored as an ES6 module.
+
+It is available in multiple flavors :
+- lib/main.cjs.js : a CommonJS transpiled to ES5 using Babel
+- lib/main.umd.js : an UMD module transpiled to ES5 using Babel
+- lib/main.es.js : a native ES6 module 
+
+The ES6 module flavor is refered by jsnext:main in the package.json. This allows ES6 bundlers like
+Rollup to use it
+
+## Contributing
+
+Rollup is used to compile and generate the different flavors into the lib directory.
+
+All sources are linted with ESLint
+
+The npm scripts are :
+- build : to generate the exported flavors
+- pretest : to compile the tests
+- test : to run the tests using mocha. Tests are run on the CommonJS flavor
