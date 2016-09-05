@@ -6,8 +6,8 @@
   "jsnext:main": "lib/main.es.js",
   "scripts": {
     "build": "rollup -c && rollup -c rollup.config.es.js",
-    "pretest": "rollup -c rollup.config.test.js",
-    "test": "npm run build && mocha lib/main_spec.js"
+    "pretest": "npm run build",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
