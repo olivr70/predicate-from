@@ -1,6 +1,6 @@
 {
   "name": "predicate-from",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Returns a predicate functions from different kind of values",
   "main": "lib/main.cjs.js",
   "jsnext:main": "lib/main.es.js",
