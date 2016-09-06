@@ -11,6 +11,13 @@ but may not be very redable for complex conditions.
 As it is very common to filter collections of objects, predicateFrom provides a very
 easy and expressive way to express conditions for objects
 
+This module does nearly the same as (discovered afterwards)
+- Ramda [whereEq()](http://ramdajs.com/0.22.1/docs/#whereEq) and [where()](http://ramdajs.com/0.22.1/docs/#where)
+  But Ramda comes with lots of additional features
+- predicates [structure()](https://github.com/wookieb/predicates/blob/master/docs/api.md#structure)
+
+I recommand using predicates, as it it focused and full-featured.
+
 ## Getting started
 
 All examples suppose that **predicate-from** module is imported as predicateFrom
