@@ -1,6 +1,6 @@
 {
   "name": "predicate-from",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Returns a predicate functions from different kind of values",
   "main": "lib/main.cjs.js",
   "jsnext:main": "lib/main.es.js",
@@ -26,15 +26,15 @@
   "devDependencies": {
     "babel-core": "^6.14.0",
     "babel-preset-es2015": "^6.14.0",
-    "chai": "^3.5.0",
+    "chai": "^4.1.2",
     "immutable": "^3.8.1",
     "lodash": "^4.15.0",
-    "predicates": "^1.0.1",
-    "ramda": "^0.22.1",
-    "mocha": "^3.0.2",
-    "rollup": "^0.34.13",
-    "rollup-plugin-babel": "^2.6.1",
-    "rollup-plugin-eslint": "^2.0.2",
+    "predicates": "^2.0.0",
+    "ramda": "^0.25.0",
+    "mocha": "^4.1.0",
+    "rollup": "^0.53.1",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-eslint": "^4.0.0",
     "rollup-plugin-strip": "^1.1.1",
     "wu": "^2.1.0"
   }
